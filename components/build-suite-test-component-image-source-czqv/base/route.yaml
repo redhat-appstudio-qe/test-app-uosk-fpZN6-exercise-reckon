@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: build-suite-test-component-image-source-czqv
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: build-suite-test-component-image-source-czqv
+    app.kubernetes.io/part-of: test-app-uosk
+  name: build-suite-test-componenwiyf
+  namespace: build-e2e-nzto-tenant
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: build-suite-test-component-image-source-czqv
+    weight: 100
+status: {}
